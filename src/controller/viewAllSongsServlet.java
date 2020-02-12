@@ -19,13 +19,29 @@ public class viewAllSongsServlet extends HttpServlet {
      */
     public viewAllSongsServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ListSongHelper dao = new ListSongHelper();
+		request.setAttribute("allSongs", dao.showAllSongs());
+		
+		String path = "/song-list.jsp";
+		
+		if(dao.showAllSongs().isEmpty()) {path = "/index.html";}
+	
+		getServletContext().getRequestDispatcher(path).forward(request, response);
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

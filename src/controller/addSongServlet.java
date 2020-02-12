@@ -27,9 +27,9 @@ public class addSongServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String artist = request.getParameter("artist");  
-		String song = request.getParameter("song"); 
+		String title = request.getParameter("title"); 
 		
-		ListSong li = new ListSong(artist, song);
+		ListSong li = new ListSong(artist, title);
 		ListSongHelper dao = new ListSongHelper();
 		dao.insertSong(li);
 		
