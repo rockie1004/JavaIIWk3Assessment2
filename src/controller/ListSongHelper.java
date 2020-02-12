@@ -11,7 +11,7 @@ import javax.persistence.TypedQuery;
 import model.ListSong;
 
 public class ListSongHelper {
-static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("JavaIIWk3Assessment");
+static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("JavaIIWk5Assessment");
 
 public void insertSong(ListSong li) {
 	EntityManager em=emfactory.createEntityManager();
@@ -21,6 +21,7 @@ public void insertSong(ListSong li) {
 	em.close();
 	
 };
+
 public	List<ListSong>	showAllSongs(){
 EntityManager	em	=	emfactory.createEntityManager();
 @SuppressWarnings("unchecked")
