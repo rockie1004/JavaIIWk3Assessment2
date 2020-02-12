@@ -45,7 +45,7 @@ public class navigationServlet extends HttpServlet {
 		// after all changes, we should redirect to the viewAllSongs servlet
 		//	The only time we don't is if they select to add a new item or edit
 		String path = "/viewAllSongsServlet";
-		boolean test = true;
+		boolean test = false;
 				
 		if(act.equals("delete")) {
 			try {
